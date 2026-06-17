@@ -9,5 +9,6 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [require("tailwind-typography-style")],
+  plugins: [require('@tailwindcss/typography')],
+  
 }

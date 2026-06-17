@@ -8,11 +8,9 @@ export default defineConfig({
             input: ['resources/js/main.jsx'],
             refresh: true,
         }),
-        react({
-            fastRefresh: true,
-            jsxRuntime: 'automatic',
-        }),
+        react(),
     ],
+
     server: {
         host: '127.0.0.1',
         port: 5174,
@@ -20,30 +18,12 @@ export default defineConfig({
         cors: true,
         hmr: {
             host: '127.0.0.1',
-            protocol: 'ws',
-            port: 5174,
-        },
-        watch: {
-            usePolling: true,
-            interval: 1000,
         },
     },
+
     resolve: {
         alias: {
             '@': '/resources/js',
-        },
-    },
-    optimizeDeps: {
-        include: ['react', 'react-dom', 'react-router-dom'],
-        esbuildOptions: {
-            target: 'es2020',
-        },
-    },
-    build: {
-        outDir: 'public/build',
-        manifest: true,
-        rollupOptions: {
-            input: 'resources/js/main.jsx',
         },
     },
 });
